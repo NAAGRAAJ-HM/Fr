@@ -4,7 +4,7 @@
 
 class class_Fr{
    public:
-      void InitFunction(void);
+      FUNC(void, FR_CODE) InitFunction(void);
 };
 
 extern class_Fr Fr;

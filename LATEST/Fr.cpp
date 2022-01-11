@@ -2,6 +2,6 @@
 
 class_Fr Fr;
 
-void class_Fr::InitFunction(void){
+FUNC(void, FR_CODE) class_Fr::InitFunction(void){
 }
 
