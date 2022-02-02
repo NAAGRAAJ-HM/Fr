@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Fr.h"
 
+#include "Fr_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Fr Fr;
+class_Fr_EcuM Fr_EcuM;
+class_Fr_EcuM *Fr_EcuM_ptr = &Fr_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, FR_CODE) class_Fr::InitFunction(void){
+FUNC(void, FR_CODE) class_Fr_EcuM::InitFunction(void){
 }
 
 FUNC(void, FR_CODE) class_Fr::ControllerInit(void){

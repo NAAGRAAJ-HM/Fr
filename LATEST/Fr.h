@@ -26,7 +26,6 @@ class class_Fr{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FR_CODE) InitFunction              (void);
       FUNC(void, FR_CODE) ControllerInit            (void);
       FUNC(void, FR_CODE) SendMTS                   (void);
       FUNC(void, FR_CODE) StopMTS                   (void);
