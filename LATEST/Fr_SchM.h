@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Fr_EcuM.h                                */
+/* File   : Fr_SchM.h                                */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_Fr.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Fr_EcuM : public interface_EcuM_Client{
+class interface_Fr_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FR_CODE) InitFunction   (void);
-      FUNC(void, FR_CODE) DeInitFunction (void);
+      FUNC(void, FR_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_Fr_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Fr_EcuM *EcuM_Client_ptr_Fr;
+extern interface_Fr_SchM *SchM_Client_ptr_Fr;
 
 /*****************************************************/
 /* EOF                                               */

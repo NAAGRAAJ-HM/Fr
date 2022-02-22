@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Fr.h                                     */
+/* File   : Fr_Unused.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Fr{
+class class_Fr_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -57,7 +57,6 @@ class class_Fr{
       FUNC(void, FR_CODE) DisableRelativeTimerIRQ   (void);
       FUNC(void, FR_CODE) GetAbsoluteTimerIRQStatus (void);
       FUNC(void, FR_CODE) GetRelativeTimerIRQStatus (void);
-      FUNC(void, FR_CODE) MainFunction              (void);
 };
 
 /*****************************************************/
@@ -71,7 +70,7 @@ class class_Fr{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Fr Fr;
+//extern class_Fr Fr;
 
 /*****************************************************/
 /* EOF                                               */
