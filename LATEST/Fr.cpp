@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Fr:
       public abstract_module
-   ,  public interface_Fr_EcuM
-   ,  public interface_Fr_SchM
 {
    public:
       FUNC(void, FR_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Fr:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Fr Fr;
-
-interface_Fr_EcuM *EcuM_Client_ptr_Fr = &Fr;
-interface_Fr_SchM *SchM_Client_ptr_Fr = &Fr;
+module_Fr      Fr;
+infEcuMClient* gptrinfEcuMClient_Fr = &Fr;
+infSchMClient* gptrinfSchMClient_Fr = &Fr;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
