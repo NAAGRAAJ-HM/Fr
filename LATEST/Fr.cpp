@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Fr_EcuM.h"
-#include "Fr_SchM.h"
+#include "infFr_EcuM.h"
+#include "infFr_SchM.h"
 #include "Fr_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Fr:
    public:
       FUNC(void, FR_CODE) InitFunction   (void);
       FUNC(void, FR_CODE) DeInitFunction (void);
+      FUNC(void, FR_CODE) GetVersionInfo (void);
       FUNC(void, FR_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Fr:
 /*****************************************************/
 module_Fr      Fr;
 infEcuMClient* gptrinfEcuMClient_Fr = &Fr;
+infDcmClient*  gptrinfDcmClient_Fr  = &Fr;
 infSchMClient* gptrinfSchMClient_Fr = &Fr;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(void){
 }
 
 FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
+}
+
+FUNC(void, FR_CODE) module_Fr::GetVersionInfo(void){
 }
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
