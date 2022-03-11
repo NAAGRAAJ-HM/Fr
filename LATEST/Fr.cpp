@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infFr_EcuM.h"
+#include "infFr_Dcm.h"
 #include "infFr_SchM.h"
-#include "Fr_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -62,6 +62,8 @@ FUNC(void, FR_CODE) module_Fr::GetVersionInfo(void){
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
 }
+
+#include "Fr_Unused.h"
 
 FUNC(void, FR_CODE) class_Fr_Unused::ControllerInit(void){
 }
