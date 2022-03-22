@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infFr_Version.h"
+#include "Fr_Cfg.h"
 #include "infFr_EcuM.h"
 #include "infFr_Dcm.h"
 #include "infFr_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define FR_AR_RELEASE_MAJOR_VERSION                                            4
+#define FR_AR_RELEASE_MINOR_VERSION                                            3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(FR_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible FR_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(FR_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible FR_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
 }
 
 FUNC(void, FR_CODE) module_Fr::GetVersionInfo(void){
+#if(STD_ON == Fr_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
