@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Fr_Cfg.h"
+#include "CfgFr.h"
 #include "infFr_EcuM.h"
 #include "infFr_Dcm.h"
 #include "infFr_SchM.h"
