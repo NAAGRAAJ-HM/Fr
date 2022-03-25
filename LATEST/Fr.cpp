@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgFr.h"
-#include "infFr_EcuM.h"
-#include "infFr_Dcm.h"
-#include "infFr_SchM.h"
+#include "module.hpp"
+#include "CfgFr.hpp"
+#include "infFr_EcuM.hpp"
+#include "infFr_Dcm.hpp"
+#include "infFr_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, FR_CODE) module_Fr::GetVersionInfo(void){
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
 }
 
-#include "Fr_Unused.h"
+#include "Fr_Unused.hpp"
 
 FUNC(void, FR_CODE) class_Fr_Unused::ControllerInit(void){
 }
