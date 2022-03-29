@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgFr.hpp"
 #include "infFr_EcuM.hpp"
 #include "infFr_Dcm.hpp"
 #include "infFr_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Fr:
       public abstract_module
 {
    public:
+      module_Fr(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, FR_CODE) InitFunction   (void);
       FUNC(void, FR_CODE) DeInitFunction (void);
-      FUNC(void, FR_CODE) GetVersionInfo (void);
       FUNC(void, FR_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, FR_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Fr, FR_VAR) Fr;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, FR_VAR, FR_CONST) gptrinfEcuMClient_Fr = &Fr;
+CONSTP2VAR(infDcmClient,  FR_VAR, FR_CONST) gptrinfDcmClient_Fr  = &Fr;
+CONSTP2VAR(infSchMClient, FR_VAR, FR_CONST) gptrinfSchMClient_Fr = &Fr;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgFr.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Fr, FR_VAR) Fr;
-CONSTP2VAR(infEcuMClient, FR_VAR, FR_CONST) gptrinfEcuMClient_Fr = &Fr;
-CONSTP2VAR(infDcmClient,  FR_VAR, FR_CONST) gptrinfDcmClient_Fr  = &Fr;
-CONSTP2VAR(infSchMClient, FR_VAR, FR_CONST) gptrinfSchMClient_Fr = &Fr;
+VAR(module_Fr, FR_VAR) Fr(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(void){
 
 FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
    Fr.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, FR_CODE) module_Fr::GetVersionInfo(void){
-#if(STD_ON == Fr_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
