@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infFr_EcuM.hpp"
 #include "infFr_Dcm.hpp"
 #include "infFr_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Fr:
    public:
       module_Fr(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, FR_CODE) InitFunction   (void);
       FUNC(void, FR_CODE) DeInitFunction (void);
       FUNC(void, FR_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Fr, FR_VAR) Fr(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, FR_CODE) module_Fr::InitFunction(void){
+FUNC(void, FR_CODE) module_Fr::InitFunction(
+   CONSTP2CONST(CfgFr_Type, CFGFR_CONFIG_DATA, CFGFR_APPL_CONST) lptrCfgFr
+){
+   if(NULL_PTR == lptrCfgFr){
+#if(STD_ON == Fr_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgFr for memory faults
+// use PBcfg_Fr as back-up configuration
+   }
    Fr.IsInitDone = E_OK;
 }
 
