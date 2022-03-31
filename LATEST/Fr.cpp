@@ -37,10 +37,9 @@ class module_Fr:
    public:
       module_Fr(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, FR_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, FR_CODE) InitFunction   (void);
       FUNC(void, FR_CODE) DeInitFunction (void);
       FUNC(void, FR_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Fr, FR_VAR) Fr(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, FR_CODE) module_Fr::InitFunction(
-   CONSTP2CONST(CfgFr_Type, CFGFR_CONFIG_DATA, CFGFR_APPL_CONST) lptrCfgFr
+   CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgFr){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgFr for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Fr_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Fr as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Fr.IsInitDone = E_OK;
 }
 
 FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
-   Fr.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Fr_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
