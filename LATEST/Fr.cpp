@@ -78,6 +78,7 @@ VAR(module_Fr, FR_VAR) Fr(
 FUNC(void, FR_CODE) module_Fr::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Fr_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Fr_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
 // use PBcfg_Fr as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Fr_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
+#if(STD_ON == Fr_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Fr_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
+#if(STD_ON == Fr_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Fr_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Fr_InitCheck)
+   }
+#endif
 }
 
 class class_Fr_Unused{
