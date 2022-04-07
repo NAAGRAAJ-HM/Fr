@@ -101,8 +101,8 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgFr;
          }
       }
       IsInitDone = E_OK;
