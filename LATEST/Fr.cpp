@@ -31,8 +31,44 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Fr_Functionality{
+   public:
+      FUNC(void, FR_CODE) ControllerInit            (void);
+      FUNC(void, FR_CODE) SendMTS                   (void);
+      FUNC(void, FR_CODE) StopMTS                   (void);
+      FUNC(void, FR_CODE) CheckMTS                  (void);
+      FUNC(void, FR_CODE) StartCommunication        (void);
+      FUNC(void, FR_CODE) AllowColdStart            (void);
+      FUNC(void, FR_CODE) HaltCommunication         (void);
+      FUNC(void, FR_CODE) AbortCommunication        (void);
+      FUNC(void, FR_CODE) SendWUP                   (void);
+      FUNC(void, FR_CODE) SetWakeupChannel          (void);
+      FUNC(void, FR_CODE) SetExtSync                (void);
+      FUNC(void, FR_CODE) GetSyncState              (void);
+      FUNC(void, FR_CODE) GetPOCStatus              (void);
+      FUNC(void, FR_CODE) TransmitTxLPdu            (void);
+      FUNC(void, FR_CODE) ReceiveRxLPdu             (void);
+      FUNC(void, FR_CODE) CheckTxLPduStatus         (void);
+      FUNC(void, FR_CODE) PrepareLPdu               (void);
+      FUNC(void, FR_CODE) GetGlobalTime             (void);
+      FUNC(void, FR_CODE) GetNmVector               (void);
+      FUNC(void, FR_CODE) SetAbsoluteTimer          (void);
+      FUNC(void, FR_CODE) SetRelativeTimer          (void);
+      FUNC(void, FR_CODE) CancelAbsoluteTimer       (void);
+      FUNC(void, FR_CODE) CancelRelativeTimer       (void);
+      FUNC(void, FR_CODE) EnableAbsoluteTimerIRQ    (void);
+      FUNC(void, FR_CODE) EnableRelativeTimerIRQ    (void);
+      FUNC(void, FR_CODE) AckAbsoluteTimerIRQ       (void);
+      FUNC(void, FR_CODE) AckRelativeTimerIRQ       (void);
+      FUNC(void, FR_CODE) DisableAbsoluteTimerIRQ   (void);
+      FUNC(void, FR_CODE) DisableRelativeTimerIRQ   (void);
+      FUNC(void, FR_CODE) GetAbsoluteTimerIRQStatus (void);
+      FUNC(void, FR_CODE) GetRelativeTimerIRQStatus (void);
+};
+
 class module_Fr:
       public abstract_module
+   ,  public class_Fr_Functionality
 {
    public:
       module_Fr(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +120,10 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +132,10 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Fr_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +160,10 @@ FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +180,10 @@ FUNC(void, FR_CODE) module_Fr::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Fr_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,132 +194,97 @@ FUNC(void, FR_CODE) module_Fr::MainFunction(void){
 #endif
 }
 
-class class_Fr_Unused{
-   public:
-      FUNC(void, FR_CODE) ControllerInit            (void);
-      FUNC(void, FR_CODE) SendMTS                   (void);
-      FUNC(void, FR_CODE) StopMTS                   (void);
-      FUNC(void, FR_CODE) CheckMTS                  (void);
-      FUNC(void, FR_CODE) StartCommunication        (void);
-      FUNC(void, FR_CODE) AllowColdStart            (void);
-      FUNC(void, FR_CODE) HaltCommunication         (void);
-      FUNC(void, FR_CODE) AbortCommunication        (void);
-      FUNC(void, FR_CODE) SendWUP                   (void);
-      FUNC(void, FR_CODE) SetWakeupChannel          (void);
-      FUNC(void, FR_CODE) SetExtSync                (void);
-      FUNC(void, FR_CODE) GetSyncState              (void);
-      FUNC(void, FR_CODE) GetPOCStatus              (void);
-      FUNC(void, FR_CODE) TransmitTxLPdu            (void);
-      FUNC(void, FR_CODE) ReceiveRxLPdu             (void);
-      FUNC(void, FR_CODE) CheckTxLPduStatus         (void);
-      FUNC(void, FR_CODE) PrepareLPdu               (void);
-      FUNC(void, FR_CODE) GetGlobalTime             (void);
-      FUNC(void, FR_CODE) GetNmVector               (void);
-      FUNC(void, FR_CODE) SetAbsoluteTimer          (void);
-      FUNC(void, FR_CODE) SetRelativeTimer          (void);
-      FUNC(void, FR_CODE) CancelAbsoluteTimer       (void);
-      FUNC(void, FR_CODE) CancelRelativeTimer       (void);
-      FUNC(void, FR_CODE) EnableAbsoluteTimerIRQ    (void);
-      FUNC(void, FR_CODE) EnableRelativeTimerIRQ    (void);
-      FUNC(void, FR_CODE) AckAbsoluteTimerIRQ       (void);
-      FUNC(void, FR_CODE) AckRelativeTimerIRQ       (void);
-      FUNC(void, FR_CODE) DisableAbsoluteTimerIRQ   (void);
-      FUNC(void, FR_CODE) DisableRelativeTimerIRQ   (void);
-      FUNC(void, FR_CODE) GetAbsoluteTimerIRQStatus (void);
-      FUNC(void, FR_CODE) GetRelativeTimerIRQStatus (void);
-};
-
-FUNC(void, FR_CODE) class_Fr_Unused::ControllerInit(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::ControllerInit(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SendMTS(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SendMTS(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::StopMTS(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::StopMTS(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::CheckMTS(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::CheckMTS(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::StartCommunication(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::StartCommunication(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::AllowColdStart(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::AllowColdStart(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::HaltCommunication(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::HaltCommunication(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::AbortCommunication(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::AbortCommunication(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SendWUP(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SendWUP(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SetWakeupChannel(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SetWakeupChannel(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SetExtSync(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SetExtSync(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetSyncState(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetSyncState(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetPOCStatus(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetPOCStatus(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::TransmitTxLPdu(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::TransmitTxLPdu(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::ReceiveRxLPdu(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::ReceiveRxLPdu(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::CheckTxLPduStatus(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::CheckTxLPduStatus(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::PrepareLPdu(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::PrepareLPdu(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetGlobalTime(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetGlobalTime(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetNmVector(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetNmVector(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SetAbsoluteTimer(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SetAbsoluteTimer(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::SetRelativeTimer(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::SetRelativeTimer(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::CancelAbsoluteTimer(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::CancelAbsoluteTimer(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::CancelRelativeTimer(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::CancelRelativeTimer(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::EnableAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::EnableAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::EnableRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::EnableRelativeTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::AckAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::AckAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::AckRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::AckRelativeTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::DisableAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::DisableAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::DisableRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::DisableRelativeTimerIRQ(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetAbsoluteTimerIRQStatus(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetAbsoluteTimerIRQStatus(void){
 }
 
-FUNC(void, FR_CODE) class_Fr_Unused::GetRelativeTimerIRQStatus(void){
+FUNC(void, FR_CODE) class_Fr_Functionality::GetRelativeTimerIRQStatus(void){
 }
 
 /******************************************************************************/
