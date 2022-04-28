@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Fr_core.hpp"
 #include "infFr_EcuM.hpp"
 #include "infFr_Dcm.hpp"
 #include "infFr_SchM.hpp"
