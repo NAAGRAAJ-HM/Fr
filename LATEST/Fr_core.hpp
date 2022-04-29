@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FR_COREFUNCTIONALITIES                                                 \
+#define FR_CORE_FUNCTIONALITIES                                                \
               FUNC(void, FR_CODE) ControllerInit            (void);            \
               FUNC(void, FR_CODE) SendMTS                   (void);            \
               FUNC(void, FR_CODE) StopMTS                   (void);            \
@@ -45,7 +45,7 @@
               FUNC(void, FR_CODE) GetAbsoluteTimerIRQStatus (void);            \
               FUNC(void, FR_CODE) GetRelativeTimerIRQStatus (void);            \
 
-#define FR_COREFUNCTIONALITIES_VIRTUAL                                         \
+#define FR_CORE_FUNCTIONALITIES_VIRTUAL                                        \
       virtual FUNC(void, FR_CODE) ControllerInit            (void) = 0;        \
       virtual FUNC(void, FR_CODE) SendMTS                   (void) = 0;        \
       virtual FUNC(void, FR_CODE) StopMTS                   (void) = 0;        \
@@ -87,7 +87,7 @@
 /******************************************************************************/
 class class_Fr_Functionality{
    public:
-      FR_COREFUNCTIONALITIES_VIRTUAL
+      FR_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

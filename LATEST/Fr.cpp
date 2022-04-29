@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgFr.hpp"
 #include "Fr_core.hpp"
-#include "infFr_EcuM.hpp"
-#include "infFr_Dcm.hpp"
-#include "infFr_SchM.hpp"
+#include "infFr.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Fr:
       );
       FUNC(void, FR_CODE) DeInitFunction (void);
       FUNC(void, FR_CODE) MainFunction   (void);
+      FR_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Fr, FR_VAR) Fr;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, FR_VAR, FR_CONST) gptrinfSchMClient_Fr = &Fr;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgFr.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
