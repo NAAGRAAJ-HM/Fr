@@ -89,7 +89,10 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Fr_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
 
 FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
 #if(STD_ON == Fr_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Fr_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
 
 FUNC(void, FR_CODE) module_Fr::MainFunction(void){
 #if(STD_ON == Fr_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Fr_InitCheck)
    }
