@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgFr.hpp"
 #include "Fr_core.hpp"
-#include "infFr.hpp"
+#include "infFr_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Fr:
+   INTERFACES_EXPORTED_FR
       public abstract_module
    ,  public class_Fr_Functionality
 {
