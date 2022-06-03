@@ -10,6 +10,7 @@
 #include "CfgFr.hpp"
 #include "Fr_core.hpp"
 #include "infFr_Exp.hpp"
+#include "infFr_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
