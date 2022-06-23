@@ -130,7 +130,9 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
 #endif
 }
 
-FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
+FUNC(void, FR_CODE) module_Fr::DeInitFunction(
+   void
+){
 #if(STD_ON == Fr_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, FR_CODE) module_Fr::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, FR_CODE) module_Fr::MainFunction(void){
+FUNC(void, FR_CODE) module_Fr::MainFunction(
+   void
+){
 #if(STD_ON == Fr_InitCheck)
    if(
          E_OK
@@ -175,97 +179,159 @@ FUNC(void, FR_CODE) module_Fr::MainFunction(void){
 #endif
 }
 
-FUNC(void, FR_CODE) module_Fr::ControllerInit(void){
+FUNC(void, FR_CODE) module_Fr::ControllerInit(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SendMTS(void){
+FUNC(void, FR_CODE) module_Fr::SendMTS(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::StopMTS(void){
+FUNC(void, FR_CODE) module_Fr::StopMTS(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::CheckMTS(void){
+FUNC(void, FR_CODE) module_Fr::CheckMTS(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::StartCommunication(void){
+FUNC(void, FR_CODE) module_Fr::StartCommunication(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::AllowColdStart(void){
+FUNC(void, FR_CODE) module_Fr::AllowColdStart(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::HaltCommunication(void){
+FUNC(void, FR_CODE) module_Fr::HaltCommunication(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::AbortCommunication(void){
+FUNC(void, FR_CODE) module_Fr::AbortCommunication(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SendWUP(void){
+FUNC(void, FR_CODE) module_Fr::SendWUP(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SetWakeupChannel(void){
+FUNC(void, FR_CODE) module_Fr::SetWakeupChannel(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SetExtSync(void){
+FUNC(void, FR_CODE) module_Fr::SetExtSync(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetSyncState(void){
+FUNC(void, FR_CODE) module_Fr::GetSyncState(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetPOCStatus(void){
+FUNC(void, FR_CODE) module_Fr::GetPOCStatus(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::TransmitTxLPdu(void){
+FUNC(void, FR_CODE) module_Fr::TransmitTxLPdu(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::ReceiveRxLPdu(void){
+FUNC(void, FR_CODE) module_Fr::ReceiveRxLPdu(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::CheckTxLPduStatus(void){
+FUNC(void, FR_CODE) module_Fr::CheckTxLPduStatus(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::PrepareLPdu(void){
+FUNC(void, FR_CODE) module_Fr::PrepareLPdu(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetGlobalTime(void){
+FUNC(void, FR_CODE) module_Fr::GetGlobalTime(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetNmVector(void){
+FUNC(void, FR_CODE) module_Fr::GetNmVector(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SetAbsoluteTimer(void){
+FUNC(void, FR_CODE) module_Fr::SetAbsoluteTimer(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::SetRelativeTimer(void){
+FUNC(void, FR_CODE) module_Fr::SetRelativeTimer(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::CancelAbsoluteTimer(void){
+FUNC(void, FR_CODE) module_Fr::CancelAbsoluteTimer(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::CancelRelativeTimer(void){
+FUNC(void, FR_CODE) module_Fr::CancelRelativeTimer(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::EnableAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::EnableAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::EnableRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::EnableRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::AckAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::AckAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::AckRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::AckRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::DisableAbsoluteTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::DisableAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::DisableRelativeTimerIRQ(void){
+FUNC(void, FR_CODE) module_Fr::DisableRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetAbsoluteTimerIRQStatus(void){
+FUNC(void, FR_CODE) module_Fr::GetAbsoluteTimerIRQStatus(
+   void
+){
 }
 
-FUNC(void, FR_CODE) module_Fr::GetRelativeTimerIRQStatus(void){
+FUNC(void, FR_CODE) module_Fr::GetRelativeTimerIRQStatus(
+   void
+){
 }
 
 /******************************************************************************/
