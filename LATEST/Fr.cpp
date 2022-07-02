@@ -82,12 +82,7 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgFr;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Fr_DevErrorDetect)
