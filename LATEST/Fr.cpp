@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgFr.hpp"
-#include "Fr_core.hpp"
-#include "infFr_Exp.hpp"
+#include "Fr.hpp"
 #include "infFr_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Fr:
-      INTERFACES_EXPORTED_FR
-      public abstract_module
-   ,  public class_Fr_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, FR_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, FR_CODE) DeInitFunction (void);
-      FUNC(void, FR_CODE) MainFunction   (void);
-      FR_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Fr, FR_VAR) Fr;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
