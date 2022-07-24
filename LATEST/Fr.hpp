@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstFr.hpp"
 #include "CfgFr.hpp"
 #include "Fr_core.hpp"
 #include "infFr_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Fr:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstFr_Type* lptrConst = (ConstFr_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, FR_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, FR_CONST,       FR_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
       );
       FUNC(void, FR_CODE) DeInitFunction (void);
       FUNC(void, FR_CODE) MainFunction   (void);

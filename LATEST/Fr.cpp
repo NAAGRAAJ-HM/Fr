@@ -48,7 +48,8 @@ VAR(module_Fr, FR_VAR) Fr;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, FR_CODE) module_Fr::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, FR_CONST,       FR_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Fr_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, FR_CODE) module_Fr::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Fr_DevErrorDetect)
