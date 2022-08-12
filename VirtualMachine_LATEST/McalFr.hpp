@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalFr:
-      INTERFACES_EXPORTED_FR
+      INTERFACES_EXPORTED_MCALFR
       public abstract_module
    ,  public class_McalFr_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalFr:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, FR_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, FR_CONST,       FR_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALFR_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALFR_CONST,       MCALFR_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALFR_CONFIG_DATA, MCALFR_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, FR_CODE) DeInitFunction (void);
-      FUNC(void, FR_CODE) MainFunction   (void);
-      FR_CORE_FUNCTIONALITIES
+      FUNC(void, MCALFR_CODE) DeInitFunction (void);
+      FUNC(void, MCALFR_CODE) MainFunction   (void);
+      MCALFR_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalFr:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalFr, FR_VAR) McalFr;
+extern VAR(module_McalFr, MCALFR_VAR) McalFr;
 
 /******************************************************************************/
 /* EOF                                                                        */

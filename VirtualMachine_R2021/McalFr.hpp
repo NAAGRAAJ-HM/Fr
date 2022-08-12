@@ -1,13 +1,16 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalFr_ServiceDet.hpp                                                     */
+/* File   : McalFr.hpp                                                            */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalFr.hpp"
+#include "ConstMcalFr.hpp"
+#include "CfgMcalFr.hpp"
+#include "McalFr_core.hpp"
+#include "infMcalFr_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -20,9 +23,29 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-typedef enum{
-      MCALFR_E_UNINIT
-}McalFr_TypeServiceDetErrorCode;
+class module_McalFr:
+      INTERFACES_EXPORTED_FR
+      public abstract_module
+   ,  public class_McalFr_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstMcalFr_Type* lptrConst = (ConstMcalFr_Type*)NULL_PTR;
+
+   public:
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+      FUNC(void, FR_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, FR_CONST,       FR_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, FR_CODE) DeInitFunction (void);
+      FUNC(void, FR_CODE) MainFunction   (void);
+      FR_CORE_FUNCTIONALITIES
+};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -35,10 +58,7 @@ typedef enum{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
+extern VAR(module_McalFr, FR_VAR) McalFr;
 
 /******************************************************************************/
 /* EOF                                                                        */

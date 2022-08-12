@@ -1,20 +1,18 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalFr.hpp                                                            */
+/* File   : infMcalFr_Exp.hpp                                                     */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalFr.hpp"
-#include "CfgMcalFr.hpp"
-#include "McalFr_core.hpp"
-#include "infMcalFr_Exp.hpp"
+#include "infMcalFr_ServiceDet.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define INTERFACES_EXPORTED_FR
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -23,29 +21,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalFr:
-      INTERFACES_EXMCALPORTED_MCALFR
-      public abstract_module
-   ,  public class_McalFr_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalFr_Type* lptrConst = (ConstMcalFr_Type*)NULL_PTR;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, MCALFR_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALFR_CONST,       MCALFR_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALFR_CONFIG_DATA, MCALFR_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALFR_CODE) DeInitFunction (void);
-      FUNC(void, MCALFR_CODE) MainFunction   (void);
-      MCALFR_CORE_FUNCTIONALITIES
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -58,7 +33,10 @@ class module_McalFr:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalFr, MCALFR_VAR) McalFr;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

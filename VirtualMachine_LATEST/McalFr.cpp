@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FR_AR_RELEASE_VERSION_MAJOR                                            4
-#define FR_AR_RELEASE_VERSION_MINOR                                            3
+#define MCALFR_AR_RELEASE_VERSION_MAJOR                                            4
+#define MCALFR_AR_RELEASE_VERSION_MINOR                                            3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(FR_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible FR_AR_RELEASE_VERSION_MAJOR!"
+#if(MCALFR_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCALFR_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(FR_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible FR_AR_RELEASE_VERSION_MINOR!"
+#if(MCALFR_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCALFR_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalFr, FR_VAR) McalFr;
+VAR(module_McalFr, MCALFR_VAR) McalFr;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, FR_CODE) module_McalFr::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, FR_CONST,       FR_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FR_CONFIG_DATA, FR_APPL_CONST) lptrCfgModule
+FUNC(void, MCALFR_CODE) module_McalFr::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALFR_CONST,       MCALFR_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALFR_CONFIG_DATA, MCALFR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalFr_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, FR_CODE) module_McalFr::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FR_E_UNINIT
+         ,  MCALFR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FR_CODE) module_McalFr::DeInitFunction(
+FUNC(void, MCALFR_CODE) module_McalFr::DeInitFunction(
    void
 ){
 #if(STD_ON == McalFr_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, FR_CODE) module_McalFr::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FR_E_UNINIT
+         ,  MCALFR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FR_CODE) module_McalFr::MainFunction(
+FUNC(void, MCALFR_CODE) module_McalFr::MainFunction(
    void
 ){
 #if(STD_ON == McalFr_InitCheck)
@@ -132,164 +132,164 @@ FUNC(void, FR_CODE) module_McalFr::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FR_E_UNINIT
+         ,  MCALFR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FR_CODE) module_McalFr::ControllerInit(
+FUNC(void, MCALFR_CODE) module_McalFr::ControllerInit(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SendMTS(
+FUNC(void, MCALFR_CODE) module_McalFr::SendMTS(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::StopMTS(
+FUNC(void, MCALFR_CODE) module_McalFr::StopMTS(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::CheckMTS(
+FUNC(void, MCALFR_CODE) module_McalFr::CheckMTS(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::StartServiceCommunication(
+FUNC(void, MCALFR_CODE) module_McalFr::StartServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::AllowColdStart(
+FUNC(void, MCALFR_CODE) module_McalFr::AllowColdStart(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::HaltServiceCommunication(
+FUNC(void, MCALFR_CODE) module_McalFr::HaltServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::AbortServiceCommunication(
+FUNC(void, MCALFR_CODE) module_McalFr::AbortServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SendWUP(
+FUNC(void, MCALFR_CODE) module_McalFr::SendWUP(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SetWakeupChannel(
+FUNC(void, MCALFR_CODE) module_McalFr::SetWakeupChannel(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SetExtSync(
+FUNC(void, MCALFR_CODE) module_McalFr::SetExtSync(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetSyncState(
+FUNC(void, MCALFR_CODE) module_McalFr::GetSyncState(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetPOCStatus(
+FUNC(void, MCALFR_CODE) module_McalFr::GetPOCStatus(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::TransmitTxLPdu(
+FUNC(void, MCALFR_CODE) module_McalFr::TransmitTxLPdu(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::ReceiveRxLPdu(
+FUNC(void, MCALFR_CODE) module_McalFr::ReceiveRxLPdu(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::CheckTxLPduStatus(
+FUNC(void, MCALFR_CODE) module_McalFr::CheckTxLPduStatus(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::PrepareLPdu(
+FUNC(void, MCALFR_CODE) module_McalFr::PrepareLPdu(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetGlobalTime(
+FUNC(void, MCALFR_CODE) module_McalFr::GetGlobalTime(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetServiceNmVector(
+FUNC(void, MCALFR_CODE) module_McalFr::GetServiceNmVector(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SetAbsoluteTimer(
+FUNC(void, MCALFR_CODE) module_McalFr::SetAbsoluteTimer(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::SetRelativeTimer(
+FUNC(void, MCALFR_CODE) module_McalFr::SetRelativeTimer(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::McalCancelAbsoluteTimer(
+FUNC(void, MCALFR_CODE) module_McalFr::McalCancelAbsoluteTimer(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::McalCancelRelativeTimer(
+FUNC(void, MCALFR_CODE) module_McalFr::McalCancelRelativeTimer(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::EnableAbsoluteTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::EnableAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::EnableRelativeTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::EnableRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::AckAbsoluteTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::AckAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::AckRelativeTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::AckRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::DisableAbsoluteTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::DisableAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::DisableRelativeTimerIRQ(
+FUNC(void, MCALFR_CODE) module_McalFr::DisableRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetAbsoluteTimerIRQStatus(
+FUNC(void, MCALFR_CODE) module_McalFr::GetAbsoluteTimerIRQStatus(
    void
 ){
 }
 
-FUNC(void, FR_CODE) module_McalFr::GetRelativeTimerIRQStatus(
+FUNC(void, MCALFR_CODE) module_McalFr::GetRelativeTimerIRQStatus(
    void
 ){
 }
