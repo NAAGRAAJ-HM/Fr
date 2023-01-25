@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalFr.hpp                                                            */
+/* File   : McalFr.hpp                                                        */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalFr.hpp"
+#include "infMcalFr_ServiceNvM_Types.hpp"
 #include "CfgMcalFr.hpp"
 #include "McalFr_core.hpp"
 #include "infMcalFr_Exp.hpp"
